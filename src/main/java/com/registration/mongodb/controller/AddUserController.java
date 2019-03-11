@@ -56,13 +56,13 @@ public class AddUserController {
 		return mav;
 	}
 
-	@PostMapping(path = "/delete/{id}")
+	@GetMapping(path = "/delete/{id}")
 	public ModelAndView deleteUser(@PathVariable String id) throws Exception {
 		userService.deleteUser(id);
 		return listAll();
 	}
 
-	@GetMapping(path = "/update")
+	@PostMapping(path = "/update")
 	public ModelAndView delete(@RequestBody User user, Errors errors) throws Exception {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("formName", "Registration");
